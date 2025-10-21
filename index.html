@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academia de Investidores Horibuss</title>
+  <style>
+    body {
+      background-color: #1a000d;
+      color: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #d4af37;
+    }
+    form {
+      background-color: #2b000f;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 0 15px rgba(212,175,55,0.4);
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #d4af37;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #b8932a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Academia de Investidores Horibuss</h1>
+  <p>Inscreve-te agora e junta-te ao nosso grupo exclusivo de investidores no WhatsApp.</p>
+  
+  <form id="formInscricao" onsubmit="enviarFormulario(event)">
+    <input type="text" id="nome" placeholder="Teu nome completo" required><br>
+    <input type="email" id="email" placeholder="Teu e-mail" required><br>
+    <button type="submit">Inscrever-se</button>
+  </form>
+
+  <p id="mensagem"></p>
+
+  <script>
+    function enviarFormulario(event) {
+      event.preventDefault();
+      const nome = document.getElementById('nome').value;
+      document.getElementById('mensagem').innerText = 
+        `✅ Obrigado, ${nome}! Serás redirecionado para o grupo.`;
+
+      setTimeout(() => {
+        window.location.href = "https://chat.whatsapp.com/JCjDwzAS5MQJ1lrttE21WZ";
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

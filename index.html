@@ -217,13 +217,24 @@
   const form = document.getElementById('inscricaoForm');
   form.addEventListener('submit', function(e) {
     e.preventDefault();
+
+    // pega os dados do formulário
     const data = new FormData(form);
+
+    // envia para Formspree
     fetch('https://formspree.io/f/mnngkjeq', {
       method: 'POST',
       body: data
-    }).then(res => {
-      window.location.href = "https://chat.whatsapp.com/JCjDwzAS5MQJ1lrttE21WZ";
-    }).catch(err => alert('Erro ao enviar, tente novamente'));
+    })
+    .then(response => {
+      if(response.ok) {
+        // se sucesso, abre WhatsApp
+        window.location.href = "https://chat.whatsapp.com/JCjDwzAS5MQJ1lrttE21WZ";
+      } else {
+        alert("❌ Erro ao enviar, tente novamente");
+      }
+    })
+    .catch(err => alert("❌ Erro de conexão, tente novamente"));
   });
 </script>
 
